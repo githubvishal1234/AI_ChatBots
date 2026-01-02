@@ -1,0 +1,101 @@
+=== KEY FACTS ===
+
+Company Name:
+CORtracker (also known as CORtracker360)
+
+Founder:
+Information not publicly disclosed on the official website.
+
+Leadership:
+The leadership team of CORtracker includes Vikram Sagar Pasala, Sunitha Pasala, and Madanu Balaswamy.
+
+Headquarters:
+Michigan, United States of America.
+
+Global Presence:
+CORtracker has a global presence with clients across multiple continents and serves over 50 clients worldwide.
+
+Employees:
+The company employs more than 100 professionals across different regions.
+
+India Operations:
+CORtracker IT Private Limited is an Indian subsidiary of CORtracker.
+It is headquartered in Jubilee Hills, Hyderabad, Telangana, India.
+The company was incorporated on 9 October 2019.
+It operates as an active, unlisted private limited company providing IT consulting, ERP support, and software services.
+
+Website Information:
+The domain cortracker.com contains limited information.
+The primary platform for official product details and demos is cortracker360.com.
+
+==================================================
+
+=== COMPANY OVERVIEW ===
+
+CORtracker is an enterprise software company that provides integrated business solutions to automate and optimize organizational operations.
+The company focuses on digital transformation using ERP, CRM, analytics, and automation technologies.
+
+CORtracker offers a modular ERP platform that includes finance, human resources, procurement, inventory management, production, maintenance, and accounting modules.
+These solutions are designed to improve cross-department coordination, reduce manual work, and support business scalability.
+
+==================================================
+
+=== CRM AND SUPPLY CHAIN SOLUTIONS ===
+
+CORtracker provides CRM solutions that include lead management, sales automation, customer support, contact management, marketing automation, and analytics.
+The CRM platform is fully integrated with ERP systems to enable seamless business operations.
+
+The company also provides supply chain management solutions that offer real-time visibility across procurement, inventory, and order fulfillment.
+These solutions help organizations enhance supply chain efficiency and decision-making through analytics and reporting dashboards.
+
+==================================================
+
+=== TECHNOLOGY AND PLATFORM FEATURES ===
+
+CORtracker supports both cloud-based and on-premise deployments.
+Key platform features include:
+- Modular and customizable architecture
+- Real-time tracking and analytics
+- Custom integrations
+- Role-based access control
+- Multi-layered security with encryption
+
+The company focuses on innovation using artificial intelligence, data analytics, automation, and emerging technologies such as IoT and big data analytics.
+The platform supports predictive analytics and forecasting for data-driven decision-making.
+
+==================================================
+
+=== CUSTOM SOFTWARE DEVELOPMENT ===
+
+CORtracker offers custom software development services, including:
+- Enterprise application development
+- Industry-specific solutions
+- Web application development
+- Mobile application development
+
+The company emphasizes scalable architecture, modern engineering practices, quality assurance, documentation, and post-launch support.
+
+==================================================
+
+=== EMPLOYEE REVIEWS AND WORK CULTURE ===
+
+Employee feedback for CORtracker varies by role, team, and location.
+
+On AmbitionBox (India), the company has an overall rating between 3.2 and 3.5 out of 5.
+Employees report strengths in skill development and work-life balance for some roles.
+Reported concerns include job security, promotions, and work satisfaction.
+
+On Glassdoor (global), CORtracker has an approximate rating of 4.2 out of 5.
+Positive feedback highlights management support, company culture, and compensation.
+
+==================================================
+
+=== TRAINING AND ACADEMY ===
+
+CORtracker operates an internal training initiative known as CORtracker Academy.
+The academy provides training programs in:
+- Full-stack development
+- Artificial intelligence
+- Mobile application development
+
+These programs include structured learning and on-the-job training experiences for developers.

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Website Chatbot</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .chatbot-container {
+        width: 380px;
+        height: 520px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .chatbot-header {
+        background: #2563eb;
+        color: #fff;
+        padding: 14px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .chatbot-body {
+        flex: 1;
+        padding: 12px;
+        overflow-y: auto;
+      }
+
+      .message {
+        margin-bottom: 10px;
+        max-width: 80%;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+
+      .user {
+        background: #2563eb;
+        color: white;
+        margin-left: auto;
+        border-bottom-right-radius: 0;
+      }
+
+      .bot {
+        background: #e5e7eb;
+        color: #111827;
+        margin-right: auto;
+        border-bottom-left-radius: 0;
+      }
+
+      .chatbot-footer {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .chatbot-footer input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        outline: none;
+      }
+
+      .chatbot-footer button {
+        margin-left: 8px;
+        padding: 10px 14px;
+        background: #2563eb;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .chatbot-footer button:hover {
+        background: #1e40af;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="chatbot-container">
+      <div class="chatbot-header">Website Chatbot</div>
+
+      <!-- ✅ ID IS chatbot -->
+      <div class="chatbot-body" id="chatbot"></div>
+
+      <div class="chatbot-footer">
+        <input id="msg" placeholder="Type your question..." />
+        <button onclick="send()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      async function send() {
+        const input = document.getElementById("msg");
+        const message = input.value.trim();
+        if (!message) return;
+
+        const chatbot = document.getElementById("chatbot");
+
+        // Show user message
+        chatbot.innerHTML += `<div class="message user">${message}</div>`;
+        input.value = "";
+
+        try {
+          const res = await fetch("http://127.0.0.1:8000/chatbot", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: message }),
+          });
+
+          const data = await res.json();
+          console.log("API response:", data);
+
+          // Show bot reply
+          chatbot.innerHTML += `<div class="message bot">${data.reply}</div>`;
+          chatbot.scrollTop = chatbot.scrollHeight;
+        } catch (error) {
+          chatbot.innerHTML += `<div class="message bot">Server error</div>`;
+          console.error(error);
+        }
+      }
+    </script>
+  </body>
+</html>

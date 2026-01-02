@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Website Chatbot</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .chatbot {
+        width: 380px;
+        height: 520px;
+        background: #fff;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #2563eb;
+        color: #fff;
+        padding: 14px;
+        text-align: center;
+      }
+      .body {
+        flex: 1;
+        padding: 12px;
+        overflow-y: auto;
+      }
+      .msg {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 80%;
+      }
+      .user {
+        background: #2563eb;
+        color: #fff;
+        margin-left: auto;
+      }
+      .bot {
+        background: #e5e7eb;
+      }
+      .footer {
+        display: flex;
+        padding: 10px;
+      }
+      button {
+        margin: 4px;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 6px;
+        background: #2563eb;
+        color: white;
+      }
+      input {
+        flex: 1;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="chatbot">
+      <div class="header">Website Chatbot</div>
+      <div class="body" id="chat"></div>
+      <div class="footer">
+        <input
+          id="msg"
+          placeholder="Type here"
+          onkeydown="if(event.key==='Enter') send()"
+        />
+        <button onclick="send()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      let sessionId = localStorage.getItem("session_id") || crypto.randomUUID();
+      localStorage.setItem("session_id", sessionId);
+
+      async function send(btn = null) {
+        const input = document.getElementById("msg");
+        const msg = btn || input.value.trim();
+        if (!msg) return;
+
+        const chat = document.getElementById("chat");
+        chat.innerHTML += `<div class="msg user">${msg}</div>`;
+        input.value = "";
+
+        const res = await fetch("http://127.0.0.1:8000/chatbot", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: msg, session_id: sessionId }),
+        });
+
+        const data = await res.json();
+        chat.innerHTML += `<div class="msg bot">${data.reply}</div>`;
+
+        if (data.buttons && data.buttons.length > 0) {
+          let b = `<div class="msg bot">`;
+          data.buttons.forEach(
+            (x) => (b += `<button onclick="send('${x}')">${x}</button>`)
+          );
+          b += `</div>`;
+          chat.innerHTML += b;
+        }
+
+        chat.scrollTop = chat.scrollHeight;
+      }
+    </script>
+  </body>
+</html>
