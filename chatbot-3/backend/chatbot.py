@@ -72,7 +72,7 @@ def chat(query: str, session_id: str):
     q = user_input.lower()
 
     # ---------- POLITE ----------
-    if q in ["thank you", "thanks", "ok", "okay", "fine", "cool"]:
+    if q in ["thank you", "thanks", "ok", "okay", "fine", "cool","bye"]:
         return {"reply": "You’re welcome 🙂 Feel free to ask anything about CORtracker.", "buttons": []}
 
     # ---------- BOT IDENTITY ----------
