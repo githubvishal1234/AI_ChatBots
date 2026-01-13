@@ -69,16 +69,16 @@ yaml file
 
 ## 🚀 Setup & Execution Steps
 
-step-1 (create virtual environment)
-python -m venv venv
-step-2   (activate virtual environment)
-venv\Scripts\activate
-step-3  (upgrade your pip)
-python -m pip install --upgrade pip
-step-4 (install all required packages or libraries)
-pip install -r requirements.txt 
-step-5   (run ingest.py file )
-python backend/ingest.py
-step-6 (run backend file)
-uvicorn backend.app:app --reload
-step-7  (open frontend code)
+- step-1 (create virtual environment)
+  python -m venv venv
+- step-2   (activate virtual environment)
+  venv\Scripts\activate
+- step-3  (upgrade your pip)
+  python -m pip install --upgrade pip
+- step-4 (install all required packages or libraries)
+  pip install -r requirements.txt 
+- step-5   (run ingest.py file )
+  python backend/ingest.py
+- step-6 (run backend file)
+  uvicorn backend.app:app --reload
+- step-7  (open frontend code)
